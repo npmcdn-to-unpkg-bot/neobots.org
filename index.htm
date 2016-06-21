@@ -17,10 +17,6 @@
 
     <link rel="icon" type="image/png" href="ico/favicon.png">
 
-    <script type="text/javascript">
-		  var domReady=function(e){var t=!1,n=function(){document.addEventListener?(document.removeEventListener("DOMContentLoaded",d),window.removeEventListener("load",d)):(document.detachEvent("onreadystatechange",d),window.detachEvent("onload",d))},d=function(){t||!document.addEventListener&&"load"!==event.type&&"complete"!==document.readyState||(t=!0,n(),e())};if("complete"===document.readyState)e();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",d),window.addEventListener("load",d);else{document.attachEvent("onreadystatechange",d),window.attachEvent("onload",d);var o=!1;try{o=null==window.frameElement&&document.documentElement}catch(a){}o&&o.doScroll&&!function c(){if(!t){try{o.doScroll("left")}catch(d){return setTimeout(c,50)}t=!0,n(),e()}}()}};
-	   </script>
-
     <title>Team 60 - Neobots</title>
   </head>
   <body>
@@ -33,7 +29,7 @@
       <ul>
         <li><a class="scroll" href="#main">HOME</a></li>
         <li><a href="#">STORE</a></li>
-        <li><a class="team" href="#">TEAMS</a></li>
+        <li><div class="team">TEAMS</div></li>
         <div id="sidebar-teams">
           <li><a href="crossfire.htm"><img class="sidebar-teamLogos" src="images/crossfireLogo.png" alt=""/></a></li>
           <li><img class="sidebar-teamLogos" src="images/reaperLogo.png" alt=""/></li>
@@ -108,7 +104,7 @@
              $('#sidebar-teams').slideUp();
 		    });
 
-        $('a.team').click(function(){
+        $('.team').click(function(){
           $('#sidebar-teams').slideToggle();
 		    });
 

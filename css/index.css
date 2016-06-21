@@ -64,6 +64,22 @@ img.opc {
 #sidebar ul li a:hover {
   transform: scale(1.05);
 }
+
+.team {
+  background: #fff;
+  color:#111;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  padding: 10px;
+  padding-top: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+.team:hover {
+  transform: scale(1.05);
+}
 #sidebar-btn{
 	display:inline-block;
 	vertical-align: middle;
