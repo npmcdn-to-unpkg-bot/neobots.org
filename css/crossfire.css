@@ -1,0 +1,371 @@
+/*
+© 2016 Team Sixty Robotics LLC; Created by Sam Barbee for Team Sixty Robotics LLC
+*/
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  font-family: "proxima-nova",sans-serif;
+  }
+#main{
+  background-color: #111;
+  color:#fff;
+  padding: 25px;
+}
+h1,h2,h3,h4,h5,h6,p {
+    transition: all 0.3s ease-in-out;
+  }
+#opc {
+  display: none;
+}
+#opc.visible {
+  display:block;
+}
+img.opc {
+  width:100%;
+  height:100%;
+  display: block;
+  position: fixed;
+}
+
+#sidebar {
+  background: #fff;
+  width:200px;
+  height:100%;
+  display: block;
+  position: fixed;
+  left: -210px;
+  top: 0px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 1px 0px 10px #333;
+  font-family: "proxima-nova",sans-serif;
+}
+#sidebar.visible {
+  left:0px;
+  transition: all 0.3s ease-in-out;
+}
+#sidebar ul {
+  margin: 0px;
+  padding: 0px;
+  margin-top: 25px;
+}
+#sidebar ul li {
+  list-style: none;
+  text-align: center;
+}
+#sidebar ul li a {
+  background: #fff;
+  color:#111;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  padding: 10px;
+  padding-top: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+#sidebar ul li a:hover {
+  transform: scale(1.05);
+}
+#sidebar-btn{
+	display:inline-block;
+	vertical-align: middle;
+	width:20px;
+	height:15px;
+	cursor:pointer;
+	margin:20px;
+	position:absolute;
+	top:0px;
+	right:-60px;
+}
+
+#sidebar-btn span{
+	height:1px;
+	background:#fff;
+	margin-bottom:5px;
+	display:block;
+}
+
+#sidebar-btn span:nth-child(2){
+	width:75%;
+}
+
+#sidebar-btn span:nth-child(3){
+	width:50%;
+}
+img.sidebar-teamLogos {
+  max-width: 120px;
+  max-height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  padding-top: 20px;
+  transition: all 0.3s ease-in-out;
+}
+img.sidebar-teamLogos:hover {
+  transform: scale(1.1);
+}
+
+header {
+  height: 100vh;
+  background-image: url(../images/crossfire/robotBack.jpg);
+  background-size: cover;
+  background-position: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+header h2 {
+  text-align: center;
+}
+header img.logo {
+  max-width: 500px;
+  max-height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.3s ease-in-out;
+}
+header img.down {
+  max-width: 100px;
+  max-height: auto;
+  display: block;
+  bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+video.reveal {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#footCenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 880px;
+  text-align: center;
+  padding: 20px;
+}
+
+section.foot {
+  display: flex;
+}
+img.neoLogo {
+  max-width: 175px;
+  max-height: 105px;
+  margin-left:40px;
+  transition: all 0.3s ease-in-out;
+}
+img.fb {
+  margin-left: 75px;
+  max-width: 68px;
+  max-height: 68px;
+  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
+}
+img.fb:hover {
+  transform: scale(1.1);
+}
+
+img.crossLogo {
+  margin-left: 75px;
+  max-width: 150px;
+  max-height: 80px;
+  transition: all 0.3s ease-in-out;
+}
+img.crossLogo:hover {
+  transform: scale(1.1);
+}
+
+img.reaperLogo {
+  margin-left: 50px;
+  max-width: 80px;
+  max-height: 80px;
+  transition: all 0.3s ease-in-out;
+}
+img.reaperLogo:hover {
+  transform: scale(1.1);
+}
+
+img.subzeroLogo {
+  margin-left: 50px;
+  max-width: 160px;
+  max-height: 85px;
+  transition: all 0.3s ease-in-out;
+}
+img.subzeroLogo:hover {
+  transform: scale(1.1);
+}
+
+table.teamStat {
+    border-collapse: collapse;
+    width: 500px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:20px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr{color:#111;}
+
+tr:nth-child(even){background-color: #f2f2f2}
+tr:nth-child(odd){background-color: #999}
+
+th {
+    background-color: #E60000;
+    color: white;
+}
+
+/*Responsive*/
+@media screen and (max-width: 1360px) {
+  video.reveal {
+  width:800px;
+  }
+}
+@media screen and (max-width: 900px) {
+  header img.logo {
+    max-width: 400px;
+  }
+  video.reveal {
+	width:575px;
+  }
+  h2 {
+    font-size:0.99em;
+  }
+
+  img.neoLogo {
+    max-width: 150px;
+    max-height: 90px;
+    margin-left:20px;
+  }
+  img.fb {
+    margin-left: 46px;
+    max-width: 49px;
+    max-height: 49px;
+    margin-top: 10px;
+  }
+  img.crossLogo {
+    margin-left: 46px;
+    max-width: 120px;
+    max-height: 70px;
+  }
+  img.reaperLogo {
+    margin-left: 20px;
+    max-width: 80px;
+    max-height: 80px;
+  }
+  img.subzeroLogo {
+    margin-left: 20px;
+    max-width: 160px;
+    max-height: 85px;
+  }
+}
+@media screen and (max-width: 675px) {
+  header img.logo {
+    max-width: 275px;
+    margin-top: 0px;
+  }
+  h2 {
+    font-size:0.95em;
+  }
+  table.teamStat {
+      width: 400px;
+  }
+  video.reveal {
+  width:375px;
+  }
+
+  img.neoLogo {
+    max-width: 108px;
+    max-height: 65px;
+    margin-left:20px;
+  }
+  img.fb {
+    margin-left: 32px;
+    max-width: 33px;
+    max-height: 33px;
+    margin-top: 10px;
+  }
+  img.crossLogo {
+    margin-left: 20px;
+    max-width: 120px;
+    max-height: 50px;
+  }
+  img.reaperLogo {
+    margin-left: 10px;
+    max-width: 80px;
+    max-height: 50px;
+  }
+  img.subzeroLogo {
+    margin-left: 10px;
+    max-width: 160px;
+    max-height: 55px;
+  }
+}
+@media screen and (max-width: 475px) {
+  header img.logo {
+    max-width: 275px;
+    margin-top: 10px;
+  }
+  h2 {
+    font-size:0.95em;
+  }
+
+  table.teamStat {
+      width: 300px;
+  }
+  video.reveal {
+  width:300px;
+  }
+  img.neoLogo {
+    max-width: 108px;
+    max-height: 40px;
+    margin-left:20px;
+  }
+  img.fb {
+    margin-left: 20px;
+    max-width: 23px;
+    max-height: 23px;
+    margin-top: 5px;
+  }
+  img.crossLogo {
+    margin-left: 20px;
+    max-width: 120px;
+    max-height: 40px;
+  }
+  img.reaperLogo {
+    margin-left: 10px;
+    max-width: 80px;
+    max-height: 40px;
+  }
+  img.subzeroLogo {
+    margin-left: 10px;
+    max-width: 160px;
+    max-height: 40px;
+  }
+}

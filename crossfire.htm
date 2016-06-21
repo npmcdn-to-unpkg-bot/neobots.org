@@ -1,0 +1,215 @@
+<!-- © 2016 Team Sixty Robotics LLC; Created by Sam Barbee for Team Sixty Robotics LLC-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  	<meta charset="utf-8">
+    <meta name="description" content="neobots.org">
+    <meta name="author" content="Sam Barbee">
+
+    <script src="scripts/jquery-2.2.3.min.js"></script>
+
+    <script src="https://use.typekit.net/ipf6qjf.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <link rel="stylesheet" href="css/crossfire.css">
+
+    <link rel="icon" type="image/png" href="ico/favicon.png">
+
+    <script type="text/javascript">
+		  var domReady=function(e){var t=!1,n=function(){document.addEventListener?(document.removeEventListener("DOMContentLoaded",d),window.removeEventListener("load",d)):(document.detachEvent("onreadystatechange",d),window.detachEvent("onload",d))},d=function(){t||!document.addEventListener&&"load"!==event.type&&"complete"!==document.readyState||(t=!0,n(),e())};if("complete"===document.readyState)e();else if(document.addEventListener)document.addEventListener("DOMContentLoaded",d),window.addEventListener("load",d);else{document.attachEvent("onreadystatechange",d),window.attachEvent("onload",d);var o=!1;try{o=null==window.frameElement&&document.documentElement}catch(a){}o&&o.doScroll&&!function c(){if(!t){try{o.doScroll("left")}catch(d){return setTimeout(c,50)}t=!0,n(),e()}}()}};
+	   </script>
+
+    <title>Team 60X - Crossfire</title>
+  </head>
+  <body>
+
+    <div id="opc">
+      <img class="opc" src="images/opc_square.png" alt=""/>
+    </div>
+
+    <div id="sidebar">
+      <ul>
+        <li><a href="index.htm">HOME</a></li>
+        <li><a href="#">STORE</a></li>
+        <li><a class="team" href="#">TEAMS</a></li>
+        <div id="sidebar-teams">
+          <li><a href="#"><img class="sidebar-teamLogos" src="images/crossfireLogo.png" alt=""/></a></li>
+          <li><img class="sidebar-teamLogos" src="images/reaperLogo.png" alt=""/></li>
+          <li><img class="sidebar-teamLogos" src="images/subzeroLogo.png" alt=""/></li>
+        </div>
+        <li><a href="#">JOIN US</a></li>
+        <li><a href="#">ABOUT</a></li>
+      </ul>
+        <div id="sidebar-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+    </div>
+
+    <header>
+      <img class="logo" src="images/crossfireLogo.png" alt=""/>
+      <a class="scroll" href="#main"><img class="down" src="images/down.png" alt=""/></a>
+    </header>
+
+    <div id="main">
+
+	  <table class="teamStat">
+		<tr>
+			<th><strong>Team Stats</strong></th>
+		</tr>
+		<tr>
+			<td><strong>Season:</strong></td>
+			<td>Nothing But Net</td>
+		</tr>
+		<tr>
+			<td><strong>Events: </strong></td>
+			<td id="events"></td>
+		</tr>
+		<tr>
+			<td><strong>Matches Played: </strong></td>
+			<td id="matchesPlayed"></td>
+		</tr>
+		<tr>
+			<td><strong>Average Rank: </strong></td>
+			<td id="avgRanking"></td>
+		</tr>
+	  </table>
+
+      <video class="reveal" width="1280" controls>
+        <source src="images/crossfire/reveal.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+
+      <div id="footCenter">
+        <section class="foot">
+          <img class="neoLogo" src="images/neoLogo.png" alt=""/>
+          <img class="fb" src="images/fbWhite.png" alt=""/>
+          <img class="crossLogo" src="images/crossfireLogo.png" alt=""/>
+          <img class="reaperLogo" src="images/reaperLogo.png" alt=""/>
+          <img class="subzeroLogo" src="images/subzeroLogo.png" alt=""/>
+        </section>
+        <p>© 2016 TEAM SIXTY ROBOTICS LLC</p>
+      </div>
+
+    </div>
+
+    <script> <!--Javascript-->
+    //vexdb.io API info puller
+
+	var xmlhttpEvents = new XMLHttpRequest();
+	var urlEvents = "http://api.vexdb.io/v1/get_rankings?team=60X&season=Nothing But Net";
+
+	var xmlhttpMatches = new XMLHttpRequest();
+	var urlMatches = "http://api.vexdb.io/v1/get_matches?team=60X&season=Nothing But Net";
+
+	xmlhttpEvents.onreadystatechange = function() {
+	  if (xmlhttpEvents.readyState == 4 && xmlhttpEvents.status == 200) {
+		  var eventsARR = JSON.parse(xmlhttpEvents.responseText);
+		  outEvents(eventsARR);
+		  avgRank(eventsARR);
+	  }
+	};
+	xmlhttpEvents.open("GET", urlEvents, true);
+	xmlhttpEvents.send();
+
+	xmlhttpMatches.onreadystatechange = function() {
+	  if (xmlhttpMatches.readyState == 4 && xmlhttpMatches.status == 200) {
+		  var matchesARR = JSON.parse(xmlhttpMatches.responseText);
+		  outMatches(matchesARR);
+	  }
+	};
+	xmlhttpMatches.open("GET", urlMatches, true);
+	xmlhttpMatches.send();
+
+	function outEvents(arr) {
+	  var out = "";
+
+	  out += arr.size;
+
+	  document.getElementById("events").innerHTML = out;
+	}
+
+	function outMatches(arr) {
+	  var out = "";
+
+	  out += arr.size;
+
+	  document.getElementById("matchesPlayed").innerHTML = out;
+	}
+
+	function avgRank(arr) {
+	  var out = "";
+	  var avg = 0;
+	  var avgDone = 0;
+
+	  for(var i = 0; i < arr.size;i++)
+	  {
+		avg += Number(arr.result[i].rank);
+	  }
+	  avgDone = Number(avg);
+
+	  avgDone = avgDone/arr.size;
+
+	  avgDone = (Math.round(avgDone));
+
+	  out += avgDone;
+
+	  document.getElementById("avgRanking").innerHTML = out;
+	}
+
+    </script>
+
+    <script> <!--JQuery-->
+    	$(document).ready(function() {
+
+
+        $("#sidebar-teams").css("display", "none");
+
+    		$("a.animate").click(function(event){
+    			event.preventDefault(); // Prevent default anchor click behavior
+    			linkLocation = this.href; // Link the desired page
+    			$("body").fadeOut(500, redirectPage); //fade out and redirect to the desired location
+    			$("body").fadeIn(20); //Fade Page Back in after user has left so page is visible if the user returns using the back buttton
+    		});
+
+        $('#sidebar-btn').click(function(){
+			       $('#sidebar').toggleClass('visible');
+             $('#opc').toggleClass('visible');
+		    });
+        $('#opc').click(function(){
+			       $('#sidebar').removeClass('visible');
+             $('#opc').removeClass('visible');
+		    });
+
+        $('a.team').click(function(){
+          $('#sidebar-teams').slideToggle();
+		    });
+
+
+        //smooth scroll
+        $("a.scroll").on('click', function(event) {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+		  //close nav and allow page operation
+              $('#sidebar').removeClass('visible');
+              $('#opc').removeClass('visible');
+          // Store hash
+          var hash = this.hash;
+          // Using jQuery's animate() method to add smooth page scroll
+          $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 800);
+        });
+
+    		function redirectPage() {
+    			window.location = linkLocation;
+    		}
+    	});
+
+    </script>
+
+  </body>
+</html>
