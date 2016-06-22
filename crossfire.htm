@@ -10,6 +10,13 @@
 
     <script src="scripts/jquery-2.2.3.min.js"></script>
 
+    <script>
+    $(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");;
+	  });
+    </script>
+
     <script src="https://use.typekit.net/ipf6qjf.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
@@ -21,6 +28,7 @@
   </head>
   <body>
 
+    <div class="se-pre-con"></div>
     <div id="opc">
       <img class="opc" src="images/opc_square.png" alt=""/>
     </div>
