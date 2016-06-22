@@ -70,6 +70,7 @@ img.subzeroLogo{margin-left:10px;max-width:160px;max-height:55px;}
 }
 @media screen and (max-width:475px){img.backer{max-width:300px;}
 #footCenter{max-width:350px;}
+#products-inner{width:231px;}
 header img.logo{max-width:275px;margin-top:10px;}
 h2{font-size:0.95em;}
 img.neoLogo{max-width:108px;max-height:40px;margin-left:20px;}
