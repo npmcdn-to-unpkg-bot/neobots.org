@@ -271,6 +271,12 @@ img.subzeroLogo:hover {
   #footCenter {
 	max-width: 700px;
   }
+  #anodized-content h1 {
+    font-size: 75px;;
+  }
+  #anodized-content {
+    width:600px;
+  }
   header img.logo {
     max-width: 400px;
   }
@@ -311,6 +317,12 @@ img.subzeroLogo:hover {
   }
   #footCenter {
 	max-width: 480px;
+  }
+  #anodized-content h1 {
+    font-size: 75px;;
+  }
+  #anodized-content {
+    width:400px;
   }
   header img.logo {
     max-width: 275px;
@@ -353,6 +365,12 @@ img.subzeroLogo:hover {
   }
   #footCenter {
 	max-width: 350px;
+  }
+  #anodized-content h1 {
+    font-size: 50px;;
+  }
+  #anodized-content {
+    width:300px;
   }
   header img.logo {
     max-width: 275px;
