@@ -195,7 +195,7 @@ video.reveal {
   padding: 20px;
 }
 
-section.foot {
+.foot {
   display: flex;
 }
 img.neoLogo {

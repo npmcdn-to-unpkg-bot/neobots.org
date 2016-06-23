@@ -35,7 +35,7 @@ header img.logo{max-width:500px;max-height:auto;display:block;margin-left:auto;m
 #products{background-color:#aaa;margin:50px auto;text-align:center;padding:20px;}
 #products-inner{width:800px;margin:5px auto;}
 #footCenter{display:block;margin-left:auto;margin-right:auto;max-width:880px;text-align:center;padding-bottom:50px;}
-section.foot{display:flex;}
+.foot{display:flex;}
 img.neoLogo{max-width:175px;max-height:105px;margin-left:40px;transition:all 0.3s ease-in-out;}
 img.fb{margin-left:75px;max-width:68px;max-height:68px;margin-top:10px;transition:all 0.3s ease-in-out;}
 img.fb:hover{transform:scale(1.1);}
