@@ -358,7 +358,7 @@ th {
     max-height: 55px;
   }
 }
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 550px) {
   header img.logo {
     max-width: 275px;
     margin-top: 10px;

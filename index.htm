@@ -1,40 +1,17 @@
-<!-- © 2016 Team Sixty Robotics LLC; Created by Sam Barbee for Team Sixty Robotics LLC-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  	<meta charset="utf-8">
+    <meta charset="utf-8">
+    <title>Team 60 - Neobots</title>
     <meta name="description" content="neobots.org">
     <meta name="author" content="Sam Barbee">
-
-    <script src="scripts/jquery-2.2.3.min.js"></script>
-
-    <script>
-    $(window).load(function() {
-		// Animate loader off screen
-		$(".se-pre-con").fadeOut("fast");
-	  });
-    $('#sidebar').removeClass('visible');
-    $('#opc').removeClass('visible');
-    $('#sidebar-teams').slideUp();
-    </script>
-
-    <script src="https://use.typekit.net/ipf6qjf.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="css/index.css">
-
     <link rel="icon" type="image/png" href="ico/favicon.png">
-
-    <title>Team 60 - Neobots</title>
   </head>
   <body>
     <div class="se-pre-con"></div>
-    <div id="opc">
-      <img class="opc" src="images/opc_square.png" alt=""/>
-    </div>
-
+    <div id="opc"><img class="opc" src="images/opc_square.png" alt=""/></div>
     <div id="sidebar">
       <ul>
         <li><a class="scroll" href="#main">HOME</a></li>
@@ -48,33 +25,29 @@
         <li><a href="#">JOIN US</a></li>
         <li><a href="#">ABOUT</a></li>
       </ul>
-        <div id="sidebar-btn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+      <div id="sidebar-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-
     <div id="main">
       <header>
         <img class="logo" src="images/neobotsLogo.png" alt=""/>
         <h2>INDEPENDENT ROBOTICS ORGANIZATION</h2>
       </header>
-
-    <div id="anodized">
-      <div id="anodized-content">
+      <div id="anodized">
+        <div id="anodized-content">
           <h1>ANODIZED ALUMINUM</h1>
           <a href="store"><button class="shopAnodizedButton">Shop Now</button></a>
+        </div>
       </div>
-    </div>
-
       <div id="teams">
         <h2>TEAMS OF THE NEOBOTS ALLIANCE</h2>
         <a href="crossfire.htm"><img class="backer" src="images/crossfireBacker.png" alt=""/></a>
         <img class="backer" src="images/reaperBacker.png" alt=""/>
         <img class="backer" src="images/subzeroBacker.png" alt=""/>
       </div>
-
       <div id="footCenter">
         <div class="foot">
           <img class="neoLogo" src="images/neoLogo.png" alt=""/>
@@ -85,63 +58,49 @@
         </div>
         <p>© 2016 TEAM SIXTY ROBOTICS LLC</p>
       </div>
-
     </div>
-
-
-    <script> <!--Smooth Page Load-->
-    	$(document).ready(function() {
-
-        $('#sidebar').removeClass('visible');
+    <script src="scripts/jquery-2.2.3.min.js"></script>
+    <script>
+    $(window).load(function() {
+  		// Animate loader off screen
+  		$(".se-pre-con").fadeOut("fast");
+  	});
+    $('#sidebar').removeClass('visible');
+    $('#opc').removeClass('visible');
+    $('#sidebar-teams').slideUp();
+    $(document).ready(function() {
+      $('#sidebar').removeClass('visible');
+      $('#opc').removeClass('visible');
+      $('#sidebar-teams').slideUp();
+      $("#sidebar-teams").css("display", "none");
+      $('#sidebar-btn').click(function(){
+		    $('#sidebar').toggleClass('visible');
+        $('#opc').toggleClass('visible');
+        $('#sidebar-teams').slideUp();
+	    });
+      $('#opc').click(function(){
+		    $('#sidebar').removeClass('visible');
         $('#opc').removeClass('visible');
         $('#sidebar-teams').slideUp();
-
-        $("#sidebar-teams").css("display", "none");
-
-    		$("a.animate").click(function(event){
-    			event.preventDefault(); // Prevent default anchor click behavior
-    			linkLocation = this.href; // Link the desired page
-    			$("body").fadeOut(500, redirectPage); //fade out and redirect to the desired location
-    			$("body").fadeIn(20); //Fade Page Back in after user has left so page is visible if the user returns using the back buttton
-    		});
-
-        $('#sidebar-btn').click(function(){
-			       $('#sidebar').toggleClass('visible');
-             $('#opc').toggleClass('visible');
-             $('#sidebar-teams').slideUp();
-		    });
-        $('#opc').click(function(){
-			       $('#sidebar').removeClass('visible');
-             $('#opc').removeClass('visible');
-             $('#sidebar-teams').slideUp();
-		    });
-
-        $('.team').click(function(){
-          $('#sidebar-teams').slideToggle();
-		    });
-
-
-        //smooth scroll
-        $("a.scroll").on('click', function(event) {
-          // Prevent default anchor click behavior
-          event.preventDefault();
-
-		   //close nav and allow page operation
-              $('#sidebar').removeClass('visible');
-              $('#opc').removeClass('visible');
-          // Store hash
-          var hash = this.hash;
-          // Using jQuery's animate() method to add smooth page scroll
-          $('html, body').animate({
-              scrollTop: $(hash).offset().top
-            }, 800);
-        });
-
-    		function redirectPage() {
-    			window.location = linkLocation;
-    		}
-    	});
+	    });
+      $('.team').click(function(){
+        $('#sidebar-teams').slideToggle();
+	    });
+      $("a.scroll").on('click', function(event) {
+        event.preventDefault();
+        $('#sidebar').removeClass('visible');
+        $('#opc').removeClass('visible');
+        var hash = this.hash;
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800);
+      });
+      function redirectPage() {
+  			window.location = linkLocation;
+  		}
+  	});
     </script>
-
+    <script src="https://use.typekit.net/ipf6qjf.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
   </body>
 </html>
