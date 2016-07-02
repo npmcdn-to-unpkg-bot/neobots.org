@@ -568,29 +568,12 @@ var curProduct = getUrlParameter('product');
     previousFocusItem = item;
   }
 
-  $(window).bind("pageshow", function(event) {
-  if (event.originalEvent.persisted) {
-  location.reload();
-  }
-  });
-
-/*! Reloads page on every visit */
-function Reload() {
-try {
-var headElement = document.getElementsByTagName("head")[0];
-if (headElement && headElement.innerHTML)
-headElement.innerHTML += "<meta http-equiv=\"refresh\" content=\"1\">";
-}
-catch (e) {}
-}
-/*! Reloads on every visit in mobile safari */
-if ((/iphone|ipod|ipad.*os 5/gi).test(navigator.appVersion)) {
-window.onpageshow = function(evt) {
-if (evt.persisted) {
-document.body.style.display = "none";
-location.reload();
-}
-};
-}
+  $(window).unload(function(){
+    $(window).bind("pageshow", function(event) {
+      if (event.originalEvent.persisted) {
+      location.reload();
+      }
+      });
+    });
 
 });
