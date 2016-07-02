@@ -569,11 +569,7 @@ var curProduct = getUrlParameter('product');
   }
 
   $(window).unload(function(){
-    $(window).bind("pageshow", function(event) {
-      if (event.originalEvent.persisted) {
       location.reload();
-      }
-      });
     });
 
 });
