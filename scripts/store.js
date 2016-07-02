@@ -112,7 +112,7 @@ var curProduct = getUrlParameter('product');
     $('.productpanel').addClass('visiblePanel');
 
     bindEventListeners();
-    
+
     client.fetchProduct('7205509123').then(function (fetchedProduct) {
       product = fetchedProduct;
       var selectedVariant = product.selectedVariant;
@@ -223,6 +223,14 @@ var curProduct = getUrlParameter('product');
 
     $('#buy-button-2').on('click', function () {
       window.open('store?product=235', '_self');
+    });
+
+    $('#buy-button-3').on('click', function () {
+      window.open('store?product=335', '_self');
+    });
+
+    $('#buy-button-4').on('click', function () {
+      window.open('store?product=535', '_self');
     });
 
   }
@@ -351,11 +359,8 @@ var curProduct = getUrlParameter('product');
   /* Update product variant quantity in cart
   ============================================================ */
   function updateQuantity(fn, variantId) {
-    var variant = product.variants.filter(function (variant) {
-      return (variant.id === variantId);
-    })[0];
     var quantity;
-    var cartLineItem = findCartItemByVariantId(variant.id);
+    var cartLineItem = findCartItemByVariantId(variantId);
     if (cartLineItem) {
       quantity = fn(cartLineItem.quantity);
       updateVariantInCart(cartLineItem, quantity);
