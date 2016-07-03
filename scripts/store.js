@@ -16,6 +16,19 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 
 var curProduct = getUrlParameter('product');
+var prodSKU = ['235','335','535','2235','125']
+var prodId = ['7205509123','7204116931','7194954563','7368739331','7369694531'];
+
+function getCurProdId(variant) {
+  var sku = prodSKU.indexOf(variant);
+
+  console.log(prodId[sku]);
+
+  return prodId[sku];
+}
+
+var curProductId = getCurProdId(curProduct);
+
 
   /* Build new ShopifyBuy client
   ============================================================ */
@@ -47,50 +60,9 @@ var curProduct = getUrlParameter('product');
 
   /* Fetch product and init
   ============================================================ */
-  if(curProduct == 235) {
+  if(getUrlParameter('product')) {
     $('.product').addClass('visibleProduct');
-    client.fetchProduct('7205509123').then(function (fetchedProduct) {
-      product = fetchedProduct;
-      var selectedVariant = product.selectedVariant;
-      var selectedVariantImage = product.selectedVariantImage;
-      var currentOptions = product.options;
-
-      var variantSelectors = generateSelectors(product);
-      $('.variant-selectors').html(variantSelectors);
-
-      updateProductTitle(product.title);
-      updateVariantImage(selectedVariantImage);
-      updateVariantTitle(selectedVariant);
-      updateVariantPrice(selectedVariant);
-      attachOnVariantSelectListeners(product);
-      updateCartTabButton();
-      bindEventListeners();
-    });
-  }
-  else if(curProduct == 335) {
-    $('.product').addClass('visibleProduct');
-    $('.productpanel').removeClass('visible');
-    client.fetchProduct('7204116931').then(function (fetchedProduct) {
-      product = fetchedProduct;
-      var selectedVariant = product.selectedVariant;
-      var selectedVariantImage = product.selectedVariantImage;
-      var currentOptions = product.options;
-
-      var variantSelectors = generateSelectors(product);
-      $('.variant-selectors').html(variantSelectors);
-
-      updateProductTitle(product.title);
-      updateVariantImage(selectedVariantImage);
-      updateVariantTitle(selectedVariant);
-      updateVariantPrice(selectedVariant);
-      attachOnVariantSelectListeners(product);
-      updateCartTabButton();
-      bindEventListeners();
-    });
-  }
-  else if(curProduct == 535) {
-    $('.product').addClass('visibleProduct');
-    client.fetchProduct('7194954563').then(function (fetchedProduct) {
+    client.fetchProduct(curProductId).then(function (fetchedProduct) {
       product = fetchedProduct;
       var selectedVariant = product.selectedVariant;
       var selectedVariantImage = product.selectedVariantImage;
@@ -149,6 +121,32 @@ var curProduct = getUrlParameter('product');
       updateVariantImage3(selectedVariantImage);
       updateVariantTitle3(selectedVariant);
       updateVariantPrice3(selectedVariant);
+      updateCartTabButton();
+    });
+
+    client.fetchProduct('7368739331').then(function (fetchedProduct) {
+      product = fetchedProduct;
+      var selectedVariant = product.selectedVariant;
+      var selectedVariantImage = product.selectedVariantImage;
+      var currentOptions = product.options;
+
+      updateProductTitle4(product.title);
+      updateVariantImage4(selectedVariantImage);
+      updateVariantTitle4(selectedVariant);
+      updateVariantPrice4(selectedVariant);
+      updateCartTabButton();
+    });
+
+    client.fetchProduct('7369694531').then(function (fetchedProduct) {
+      product = fetchedProduct;
+      var selectedVariant = product.selectedVariant;
+      var selectedVariantImage = product.selectedVariantImage;
+      var currentOptions = product.options;
+
+      updateProductTitle5(product.title);
+      updateVariantImage5(selectedVariantImage);
+      updateVariantTitle5(selectedVariant);
+      updateVariantPrice5(selectedVariant);
       updateCartTabButton();
     });
   }
@@ -233,6 +231,10 @@ var curProduct = getUrlParameter('product');
       window.open('store?product=535', '_self');
     });
 
+    $('#buy-button-5').on('click', function () {
+      window.open('store?product=2235', '_self');
+    });
+
   }
 
 
@@ -291,6 +293,12 @@ var curProduct = getUrlParameter('product');
   function updateProductTitle3(title) {
     $('#buy-button-4 .product-title').text(title);
   }
+  function updateProductTitle4(title) {
+    $('#buy-button-5 .product-title').text(title);
+  }
+  function updateProductTitle5(title) {
+    $('#buy-button-6 .product-title').text(title);
+  }
 
   /* Update product image based on selected variant
   ============================================================ */
@@ -312,6 +320,18 @@ var curProduct = getUrlParameter('product');
     $('#buy-button-4 .variant-image').attr('src', src);
   }
 
+  function updateVariantImage4(image) {
+    var src = (image) ? image.src : ShopifyBuy.NO_IMAGE_URI;
+
+    $('#buy-button-5 .variant-image').attr('src', src);
+  }
+
+  function updateVariantImage5(image) {
+    var src = (image) ? image.src : ShopifyBuy.NO_IMAGE_URI;
+
+    $('#buy-button-6 .variant-image').attr('src', src);
+  }
+
 
   /* Update product variant title based on selected variant
   ============================================================ */
@@ -327,6 +347,14 @@ var curProduct = getUrlParameter('product');
     $('#buy-button-4 .variant-title').text(variant.title);
   }
 
+  function updateVariantTitle4(variant) {
+    $('#buy-button-5 .variant-title').text(variant.title);
+  }
+
+  function updateVariantTitle5(variant) {
+    $('#buy-button-6 .variant-title').text(variant.title);
+  }
+
   /* Update product variant price based on selected variant
   ============================================================ */
   function updateVariantPrice1(variant) {
@@ -339,6 +367,14 @@ var curProduct = getUrlParameter('product');
 
   function updateVariantPrice3(variant) {
     $('#buy-button-4 .variant-price').text('$' + variant.price);
+  }
+
+  function updateVariantPrice4(variant) {
+    $('#buy-button-5 .variant-price').text('$' + variant.price);
+  }
+
+  function updateVariantPrice5(variant) {
+    $('#buy-button-6 .variant-price').text('$' + variant.price);
   }
 
   /* Attach and control listeners onto buy button
