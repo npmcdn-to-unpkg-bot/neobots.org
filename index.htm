@@ -59,47 +59,10 @@
       </div>
     </div>
     <script src="scripts/jquery-2.2.3.min.js"></script>
-    <script>
-    $(window).load(function() {
-  		// Animate loader off screen
-  		$(".se-pre-con").fadeOut("fast");
-  	});
-    $('#sidebar').removeClass('visible');
-    $('#opc').removeClass('visible');
-    $('#sidebar-teams').slideUp();
-    $(document).ready(function() {
-      $('#sidebar').removeClass('visible');
-      $('#opc').removeClass('visible');
-      $('#sidebar-teams').slideUp();
-      $("#sidebar-teams").css("display", "none");
-      $('#sidebar-btn').click(function(){
-		    $('#sidebar').toggleClass('visible');
-        $('#opc').toggleClass('visible');
-        $('#sidebar-teams').slideUp();
-	    });
-      $('#opc').click(function(){
-		    $('#sidebar').removeClass('visible');
-        $('#opc').removeClass('visible');
-        $('#sidebar-teams').slideUp();
-	    });
-      $('.team').click(function(){
-        $('#sidebar-teams').slideToggle();
-	    });
-      $("a.scroll").on('click', function(event) {
-        event.preventDefault();
-        $('#sidebar').removeClass('visible');
-        $('#opc').removeClass('visible');
-        var hash = this.hash;
-        $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 800);
-      });
-      function redirectPage() {
-  			window.location = linkLocation;
-  		}
-  	});
-    </script>
     <script src="https://use.typekit.net/ipf6qjf.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script src="scripts/load.js"></script>
+    <script src="scripts/menu.js"></script>
+    <script src="scripts/scroll.js"></script>
   </body>
 </html>

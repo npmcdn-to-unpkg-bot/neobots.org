@@ -21,9 +21,7 @@ var prodId = ['7205509123','7204116931','7194954563','7368739331','7369694531'];
 
 function getCurProdId(variant) {
   var sku = prodSKU.indexOf(variant);
-
   console.log(prodId[sku]);
-
   return prodId[sku];
 }
 
@@ -233,6 +231,10 @@ var curProductId = getCurProdId(curProduct);
 
     $('#buy-button-5').on('click', function () {
       window.open('store?product=2235', '_self');
+    });
+
+    $('#buy-button-6').on('click', function () {
+      window.open('store?product=125', '_self');
     });
 
   }
