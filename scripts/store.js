@@ -16,8 +16,8 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 
 var curProduct = getUrlParameter('product');
-var prodSKU = ['235','335','535','2235','125']
-var prodId = ['7205509123','7204116931','7194954563','7368739331','7369694531'];
+var prodSKU = ['225','235','335','535','2235','125']
+var prodId = ['7412397315','7205509123','7204116931','7194954563','7368739331','7369694531'];
 
 function getCurProdId(variant) {
   var sku = prodSKU.indexOf(variant);
@@ -80,73 +80,9 @@ var curProductId = getCurProdId(curProduct);
   }
   else {
     $('.productpanel').addClass('visiblePanel');
-
+    $('.products-inner').addClass('visibleInner');
     bindEventListeners();
-
-    client.fetchProduct('7205509123').then(function (fetchedProduct) {
-      product = fetchedProduct;
-      var selectedVariant = product.selectedVariant;
-      var selectedVariantImage = product.selectedVariantImage;
-      var currentOptions = product.options;
-
-      updateProductTitle1(product.title);
-      updateVariantImage1(selectedVariantImage);
-      updateVariantTitle1(selectedVariant);
-      updateVariantPrice1(selectedVariant);
-      updateCartTabButton();
-    });
-
-    client.fetchProduct('7204116931').then(function (fetchedProduct) {
-      product = fetchedProduct;
-      var selectedVariant = product.selectedVariant;
-      var selectedVariantImage = product.selectedVariantImage;
-      var currentOptions = product.options;
-
-      updateProductTitle2(product.title);
-      updateVariantImage2(selectedVariantImage);
-      updateVariantTitle2(selectedVariant);
-      updateVariantPrice2(selectedVariant);
-      updateCartTabButton();
-    });
-
-    client.fetchProduct('7194954563').then(function (fetchedProduct) {
-      product = fetchedProduct;
-      var selectedVariant = product.selectedVariant;
-      var selectedVariantImage = product.selectedVariantImage;
-      var currentOptions = product.options;
-
-      updateProductTitle3(product.title);
-      updateVariantImage3(selectedVariantImage);
-      updateVariantTitle3(selectedVariant);
-      updateVariantPrice3(selectedVariant);
-      updateCartTabButton();
-    });
-
-    client.fetchProduct('7368739331').then(function (fetchedProduct) {
-      product = fetchedProduct;
-      var selectedVariant = product.selectedVariant;
-      var selectedVariantImage = product.selectedVariantImage;
-      var currentOptions = product.options;
-
-      updateProductTitle4(product.title);
-      updateVariantImage4(selectedVariantImage);
-      updateVariantTitle4(selectedVariant);
-      updateVariantPrice4(selectedVariant);
-      updateCartTabButton();
-    });
-
-    client.fetchProduct('7369694531').then(function (fetchedProduct) {
-      product = fetchedProduct;
-      var selectedVariant = product.selectedVariant;
-      var selectedVariantImage = product.selectedVariantImage;
-      var currentOptions = product.options;
-
-      updateProductTitle5(product.title);
-      updateVariantImage5(selectedVariantImage);
-      updateVariantTitle5(selectedVariant);
-      updateVariantPrice5(selectedVariant);
-      updateCartTabButton();
-    });
+    updateCartTabButton();
   }
 
 
@@ -217,23 +153,23 @@ var curProductId = getCurProdId(curProduct);
       openCart();
     });
 
-    $('#buy-button-2').on('click', function () {
+    $('#235pan').on('click', function () {
       window.open('store?product=235', '_self');
     });
 
-    $('#buy-button-3').on('click', function () {
+    $('#335pan').on('click', function () {
       window.open('store?product=335', '_self');
     });
 
-    $('#buy-button-4').on('click', function () {
+    $('#535pan').on('click', function () {
       window.open('store?product=535', '_self');
     });
 
-    $('#buy-button-5').on('click', function () {
+    $('#2235pan').on('click', function () {
       window.open('store?product=2235', '_self');
     });
 
-    $('#buy-button-6').on('click', function () {
+    $('#125pan').on('click', function () {
       window.open('store?product=125', '_self');
     });
 
@@ -284,99 +220,6 @@ var curProductId = getCurProdId(curProduct);
   ============================================================ */
   function updateVariantPrice(variant) {
     $('#buy-button-1 .variant-price').text('$' + variant.price);
-  }
-
-  function updateProductTitle1(title) {
-    $('#buy-button-2 .product-title').text(title);
-  }
-  function updateProductTitle2(title) {
-    $('#buy-button-3 .product-title').text(title);
-  }
-  function updateProductTitle3(title) {
-    $('#buy-button-4 .product-title').text(title);
-  }
-  function updateProductTitle4(title) {
-    $('#buy-button-5 .product-title').text(title);
-  }
-  function updateProductTitle5(title) {
-    $('#buy-button-6 .product-title').text(title);
-  }
-
-  /* Update product image based on selected variant
-  ============================================================ */
-  function updateVariantImage1(image) {
-    var src = (image) ? image.src : ShopifyBuy.NO_IMAGE_URI;
-
-    $('#buy-button-2 .variant-image').attr('src', src);
-  }
-
-  function updateVariantImage2(image) {
-    var src = (image) ? image.src : ShopifyBuy.NO_IMAGE_URI;
-
-    $('#buy-button-3 .variant-image').attr('src', src);
-  }
-
-  function updateVariantImage3(image) {
-    var src = (image) ? image.src : ShopifyBuy.NO_IMAGE_URI;
-
-    $('#buy-button-4 .variant-image').attr('src', src);
-  }
-
-  function updateVariantImage4(image) {
-    var src = (image) ? image.src : ShopifyBuy.NO_IMAGE_URI;
-
-    $('#buy-button-5 .variant-image').attr('src', src);
-  }
-
-  function updateVariantImage5(image) {
-    var src = (image) ? image.src : ShopifyBuy.NO_IMAGE_URI;
-
-    $('#buy-button-6 .variant-image').attr('src', src);
-  }
-
-
-  /* Update product variant title based on selected variant
-  ============================================================ */
-  function updateVariantTitle1(variant) {
-    $('#buy-button-2 .variant-title').text(variant.title);
-  }
-
-  function updateVariantTitle2(variant) {
-    $('#buy-button-3 .variant-title').text(variant.title);
-  }
-
-  function updateVariantTitle3(variant) {
-    $('#buy-button-4 .variant-title').text(variant.title);
-  }
-
-  function updateVariantTitle4(variant) {
-    $('#buy-button-5 .variant-title').text(variant.title);
-  }
-
-  function updateVariantTitle5(variant) {
-    $('#buy-button-6 .variant-title').text(variant.title);
-  }
-
-  /* Update product variant price based on selected variant
-  ============================================================ */
-  function updateVariantPrice1(variant) {
-    $('#buy-button-2 .variant-price').text('$' + variant.price);
-  }
-
-  function updateVariantPrice2(variant) {
-    $('#buy-button-3 .variant-price').text('$' + variant.price);
-  }
-
-  function updateVariantPrice3(variant) {
-    $('#buy-button-4 .variant-price').text('$' + variant.price);
-  }
-
-  function updateVariantPrice4(variant) {
-    $('#buy-button-5 .variant-price').text('$' + variant.price);
-  }
-
-  function updateVariantPrice5(variant) {
-    $('#buy-button-6 .variant-price').text('$' + variant.price);
   }
 
   /* Attach and control listeners onto buy button
