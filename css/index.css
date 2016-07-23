@@ -197,9 +197,12 @@ img.subzeroLogo:hover {
 }
 
 /*Responsive*/
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1075px) {
   img.backer {
     max-width: 600px;
+  }
+  #teams {
+    max-width: 650px;
   }
   #footCenter {
 	max-width: 700px;
@@ -244,9 +247,12 @@ img.subzeroLogo:hover {
     max-height: 85px;
   }
 }
-@media screen and (max-width: 675px) {
+@media screen and (max-width: 805px) {
   img.backer {
     max-width: 400px;
+  }
+  #teams {
+    max-width: 450px;
   }
   #footCenter {
 	max-width: 480px;
@@ -292,9 +298,12 @@ img.subzeroLogo:hover {
     max-height: 55px;
   }
 }
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 550px) {
   img.backer {
     max-width: 300px;
+  }
+  #teams {
+    max-width: 350px;
   }
   #footCenter {
 	max-width: 350px;
