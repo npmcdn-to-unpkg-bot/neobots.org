@@ -6,11 +6,13 @@ $(document).ready(function() {
   $('#sidebar-btn').click(function(){
     $('#sidebar').toggleClass('visible');
     $('#opc').toggleClass('visible');
+    $('#sidebar-btn span').toggleClass('visible');
     $('#sidebar-teams').slideUp();
   });
   $('#opc').click(function(){
     $('#sidebar').removeClass('visible');
     $('#opc').removeClass('visible');
+    $('#sidebar-btn span').removeClass('visible');
     $('#sidebar-teams').slideUp();
   });
   $('.team').click(function(){

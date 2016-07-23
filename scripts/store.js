@@ -157,6 +157,10 @@ var curProductId = getCurProdId(curProduct);
       window.open('store?product=235', '_self');
     });
 
+    $('#225pan').on('click', function () {
+      window.open('store?product=225', '_self');
+    });
+
     $('#335pan').on('click', function () {
       window.open('store?product=335', '_self');
     });

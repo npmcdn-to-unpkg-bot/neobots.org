@@ -32,6 +32,9 @@ h1,h2,h3,h4,h5,h6,p {
 #opc.visible {
   display:block;
 }
+hr {
+  opacity: 0.5;
+}
 img.opc {
   width:100%;
   height:100%;
@@ -39,100 +42,8 @@ img.opc {
   position: fixed;
 }
 
-#sidebar {
-  background: #fff;
-  width:200px;
-  height:100%;
-  display: block;
-  position: fixed;
-  left: -210px;
-  top: 0px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 1px 0px 10px #333;
-  font-family: "proxima-nova",sans-serif;
-}
-#sidebar.visible {
-  left:0px;
-  transition: all 0.3s ease-in-out;
-}
-#sidebar ul {
-  margin: 0px;
-  padding: 0px;
+hr.divider {
   margin-top: 25px;
-}
-#sidebar ul li {
-  list-style: none;
-  text-align: center;
-}
-#sidebar ul li a {
-  background: #fff;
-  color:#111;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 150px;
-  padding: 10px;
-  padding-top: 20px;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-}
-#sidebar ul li a:hover {
-  transform: scale(1.05);
-}
-
-.team {
-  background: #fff;
-  color:#111;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 150px;
-  padding: 10px;
-  padding-top: 20px;
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-}
-.team:hover {
-  transform: scale(1.05);
-}
-#sidebar-btn{
-	display:inline-block;
-	vertical-align: middle;
-	width:20px;
-	height:15px;
-	cursor:pointer;
-	margin:20px;
-	position:absolute;
-	top:0px;
-	right:-60px;
-}
-
-#sidebar-btn span{
-	height:1px;
-	background:#111;
-	margin-bottom:5px;
-	display:block;
-}
-
-#sidebar-btn span:nth-child(2){
-	width:75%;
-}
-
-#sidebar-btn span:nth-child(3){
-	width:50%;
-}
-
-img.sidebar-teamLogos {
-  max-width: 120px;
-  max-height: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-  padding-top: 20px;
-  transition: all 0.3s ease-in-out;
-}
-img.sidebar-teamLogos:hover {
-  transform: scale(1.1);
 }
 
 header {
@@ -150,10 +61,15 @@ header img.logo {
   transition: all 0.3s ease-in-out;
 }
 #teams {
-  margin: 50px auto;
+  margin: 25px auto;
   text-align: center;
   padding:20px;
-  background-color: #aaa;
+  width:1000px;
+  background-color: #fff;
+}
+
+.textLeft {
+  text-align: left;
 }
 
 #anodized {
@@ -194,6 +110,7 @@ header img.logo {
     border: 2px solid #fff;
     background-color: rgba(0, 0, 0, 0.3);
     color: white;
+    border-radius: 8px;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -221,6 +138,7 @@ img.backer:hover {
 
 #footCenter {
   display: block;
+  margin-top: 0px;
   margin-left: auto;
   margin-right: auto;
   max-width: 880px;
