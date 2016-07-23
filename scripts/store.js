@@ -486,7 +486,7 @@ $("#20Filter").jqxCheckBox({
 $("#50Filter").jqxCheckBox({
   width: '150px',
   height: 25,
-  theme: 'arctic'
+  theme: 'arctic',
 });
 
 $("#51Filter").jqxCheckBox({
