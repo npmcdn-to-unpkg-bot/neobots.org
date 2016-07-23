@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="css/store.css">
     <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="http://jqwidgets.com/public/jqwidgets/styles/jqx.base.css">
+    <link rel="stylesheet" href="http://jqwidgets.com/public/jqwidgets/styles/jqx.arctic.css">
     <link rel="icon" type="image/png" href="ico/favicon.png">
   </head>
   <body>
@@ -34,6 +36,22 @@
           <span></span>
         </div>
     </div>
+
+    <div class="filter">
+  		<ul class="filter">
+        <li><strong>Filter</strong></li>
+        <li><hr></li>
+  			<li><strong>Product</strong></li>
+  			<li><div id='alumFilter'>Aluminum</div></li>
+        <li><div id='viyFilter'>Viynl Stickers</div></li>
+        <li><div id='zipFilter'>Zip-Ties</div></li>
+        <li><hr></li>
+        <li><strong>Price</strong></li>
+  			<li><div id='20Filter'>Under 20</div></li>
+        <li><div id='50Filter'>Under 50</div></li>
+        <li><div id='51Filter'>Over 50</div></li>
+  		</ul>
+  	</div>
 
     <div id="main">
       <header>
@@ -206,6 +224,7 @@
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
     <script src="scripts/jquery-2.2.3.min.js"></script>
+    <script src="http://jqwidgets.com/public/jqwidgets/jqx-all.js"></script>
     <script src="http://sdks.shopifycdn.com/js-buy-sdk/latest/shopify-buy.polyfilled.globals.min.js"></script>
     <script src="scripts/load.js"></script>
     <script src="scripts/menu.js"></script>

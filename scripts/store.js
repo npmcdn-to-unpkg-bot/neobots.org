@@ -458,3 +458,39 @@ var curProductId = getCurProdId(curProduct);
     });
 
 });
+
+$("#alumFilter").jqxCheckBox({
+  width: '100px',
+  height: 25,
+  theme: 'arctic'
+});
+
+$("#viyFilter").jqxCheckBox({
+  width: '150px',
+  height: 25,
+  theme: 'arctic'
+});
+
+$("#zipFilter").jqxCheckBox({
+  width: '100px',
+  height: 25,
+  theme: 'arctic'
+});
+
+$("#20Filter").jqxCheckBox({
+  width: '100px',
+  height: 25,
+  theme: 'arctic'
+});
+
+$("#50Filter").jqxCheckBox({
+  width: '150px',
+  height: 25,
+  theme: 'arctic'
+});
+
+$("#51Filter").jqxCheckBox({
+  width: '100px',
+  height: 25,
+  theme: 'arctic'
+});
