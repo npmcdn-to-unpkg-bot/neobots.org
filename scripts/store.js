@@ -521,6 +521,7 @@ $(window).unload(function(){
   var filterVar = ['alumFilter','vinFilter','zipFilter','Filter20','Filter50','Filter51'];
 
 
+
   var alum = ['#235pan','#225pan','#335pan','#535pan','#2235pan','#125pan'];
   var under30 = ['#225pan','#125pan'];
 
@@ -543,7 +544,9 @@ $(window).unload(function(){
     }
 
 
+
     showProduct(all);
+
 
   }
 
