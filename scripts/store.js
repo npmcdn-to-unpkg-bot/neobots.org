@@ -472,9 +472,15 @@ $('#opc1').click(function(){
   $('#opc1').removeClass('visible');
 });
 
-$(window).onbeforeunload(function(){
+
+$(window).unload(function(){
+      updateCartTabButton();
+    });
+
+$(window).pagehide(function(){
     updateCartTabButton();
   });
+
 
 $("#alumFilter").jqxCheckBox({
   width: '100px',
