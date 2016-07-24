@@ -21,9 +21,11 @@ hr {
   opacity: 0.5;
 }
 
-html {
+html,body {
   font-family: "proxima-nova",sans-serif;
-  color: #31373d; }
+  color: #31373d;
+  max-width: 100%;
+  overflow-x: hidden; }
 
 .buy-button {
     border: 2px solid #fff;
@@ -389,9 +391,9 @@ img.variant-image {
   }
 
   #filter-btn{display:inline-block;vertical-align:middle;width:20px;height:15px;cursor:pointer;margin:20px;position:absolute;top:0px;left:-60px;
-    -ms-transform: rotate(-90deg); /* IE 9 */
-    -webkit-transform: rotate(-90deg); /* Safari */
-    transform: rotate(-90deg);}
+    -ms-transform: translate(0px, -1px) rotate(-90deg); /* IE 9 */
+    -webkit-transform: translate(0px, -1px) rotate(-90deg); /* Safari */
+    transform: translate(0px, -1px) rotate(-90deg);}
   #filter-btn span{transition:all 0.3s ease-in-out;height:1px;background:#111;margin-bottom:5px;display:block;}
   #filter-btn span:nth-child(2){width:50%;}
   #filter-btn span:nth-child(3){width:75%;opacity: 1;}

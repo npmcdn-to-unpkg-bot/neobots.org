@@ -16,7 +16,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 
 var curProduct = getUrlParameter('product');
-var prodSKU = ['225','235','335','535','2235','125']
+var prodSKU = ['225','235','335','535','2235','125'];
 var prodId = ['7412397315','7205509123','7204116931','7194954563','7368739331','7369694531'];
 
 function getCurProdId(variant) {
@@ -457,62 +457,98 @@ var curProductId = getCurProdId(curProduct);
   }
 });
 
-$('#filter-btn').click(function(){
-  $('#filter').toggleClass('visible');
-  $('#filter-btn span').toggleClass('visible');
-  $('#opc1').toggleClass('visible');
-  $('#sidebar').removeClass('visible');
-  $('#sidebar-btn span').removeClass('visible');
-  $('#opc').removeClass('visible');
-});
-
-$('#opc1').click(function(){
-  $('#filter').removeClass('visible');
-  $('#filter-btn span').removeClass('visible');
-  $('#opc1').removeClass('visible');
-});
-
-
 $(window).unload(function(){
-      updateCartTabButton();
-    });
-
-
-$("#alumFilter").jqxCheckBox({
-  width: '100px',
-  height: 25,
-  theme: 'arctic'
+    updateCartTabButton();
 });
 
-$("#vinFilter").jqxCheckBox({
-  width: '150px',
-  height: 25,
-  theme: 'arctic'
-});
 
-$("#zipFilter").jqxCheckBox({
-  width: '100px',
-  height: 25,
-  theme: 'arctic'
-});
+  $('#filter-btn').click(function(){
+    $('#filter').toggleClass('visible');
+    $('#filter-btn span').toggleClass('visible');
+    $('#opc1').toggleClass('visible');
+    $('#sidebar').removeClass('visible');
+    $('#sidebar-btn span').removeClass('visible');
+    $('#opc').removeClass('visible');
+  });
 
-$("#20Filter").jqxCheckBox({
-  width: '100px',
-  height: 25,
-  theme: 'arctic'
-});
+  $('#opc1').click(function(){
+    $('#filter').removeClass('visible');
+    $('#filter-btn span').removeClass('visible');
+    $('#opc1').removeClass('visible');
+  });
 
-$("#50Filter").jqxCheckBox({
-  width: '150px',
-  height: 25,
-  theme: 'arctic',
-});
 
-$("#51Filter").jqxCheckBox({
-  width: '100px',
-  height: 25,
-  theme: 'arctic'
-});
+  $("#alumFilter").jqxCheckBox({
+    width: '100px',
+    height: 25,
+    theme: 'arctic'
+  });
 
-$("#apply").jqxButton({ width: '100', height: '25', theme: 'arctic'});
-$("#viewAll").jqxButton({ width: '100', height: '25', theme: 'arctic'});
+  $("#vinFilter").jqxCheckBox({
+    width: '150px',
+    height: 25,
+    theme: 'arctic'
+  });
+
+  $("#zipFilter").jqxCheckBox({
+    width: '100px',
+    height: 25,
+    theme: 'arctic'
+  });
+
+  $("#20Filter").jqxCheckBox({
+    width: '100px',
+    height: 25,
+    theme: 'arctic'
+  });
+
+  $("#50Filter").jqxCheckBox({
+    width: '150px',
+    height: 25,
+    theme: 'arctic',
+  });
+
+  $("#51Filter").jqxCheckBox({
+    width: '100px',
+    height: 25,
+    theme: 'arctic'
+  });
+
+  $("#apply").jqxButton({ width: '100', height: '25', theme: 'arctic'});
+  $("#viewAll").jqxButton({ width: '100', height: '25', theme: 'arctic'});
+
+  var filters = ['#alumFilter','#vinFilter','#zipFilter','#20Filter','#50Filter','#51Filter'];
+  var filterVar = ['alumFilter','vinFilter','zipFilter','Filter20','Filter50','Filter51'];
+
+  function refilter() {
+
+    for(i = 0; i < filters.length; i++) {
+      filterVar[i] = false;
+    }
+
+    for (i = 0; i < filters.length; i++) {
+      filterVar[i] = $(filters[i]).jqxCheckBox({ checked: false });
+    }
+
+  }
+
+  function filter() {
+
+    for (i = 0; i < filters.length; i++) {
+      filterVar[i] = $(filters[i]).jqxCheckBox('checked');
+    }
+
+    if(filterVar.indexOf(true)== -1) {
+      refilter();
+    }
+    else {
+      console.log('filter');
+    }
+
+  }
+  $('#viewAll').click(function(){
+    refilter();
+  });
+  $('#apply').click(function(){
+    filter();
+  });
