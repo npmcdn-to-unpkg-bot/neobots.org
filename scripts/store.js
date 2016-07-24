@@ -44,12 +44,15 @@ var curProductId = getCurProdId(curProduct);
       cart = remoteCart;
       cartLineItemCount = cart.lineItems.length;
       renderCartItems();
+      updateCartTabButton();
+      console.log('A');
     });
   } else {
     client.createCart().then(function (newCart) {
       cart = newCart;
       localStorage.setItem('lastCartId', cart.id);
       cartLineItemCount = 0;
+      console.log('B');
     });
   }
 
@@ -439,12 +442,12 @@ var curProductId = getCurProdId(curProduct);
   ============================================================ */
   function updateCartTabButton() {
     if (cart.lineItems.length > 0) {
-      $('.btn--cart-tab .btn__counter').html(cart.lineItemCount);
-      $('.btn--cart-tab').addClass('js-active');
-    } else {
-      $('.btn--cart-tab').removeClass('js-active');
-      $('.cart').removeClass('js-active');
-    }
+       $('.btn--cart-tab .btn__counter').html(cart.lineItemCount);
+       $('.btn--cart-tab').addClass('js-active');
+     } else {
+       $('.btn--cart-tab').removeClass('js-active');
+       $('.cart').removeClass('js-active');
+     }
   }
 
   /* Set previously focused item for escape handler
@@ -452,12 +455,11 @@ var curProductId = getCurProdId(curProduct);
   function setPreviousFocusItem(item) {
     previousFocusItem = item;
   }
-
-  $(window).unload(function(){
-      location.reload();
-    });
-
 });
+
+$(window).unload(function(){
+    updateCartTabButton();
+  });
 
 $("#alumFilter").jqxCheckBox({
   width: '100px',
@@ -465,7 +467,7 @@ $("#alumFilter").jqxCheckBox({
   theme: 'arctic'
 });
 
-$("#viyFilter").jqxCheckBox({
+$("#vinFilter").jqxCheckBox({
   width: '150px',
   height: 25,
   theme: 'arctic'
@@ -494,3 +496,5 @@ $("#51Filter").jqxCheckBox({
   height: 25,
   theme: 'arctic'
 });
+
+$("#jqxButton").jqxButton({ width: '100', height: '25', theme: 'arctic'});
