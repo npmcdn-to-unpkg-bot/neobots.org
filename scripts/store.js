@@ -457,6 +457,21 @@ var curProductId = getCurProdId(curProduct);
   }
 });
 
+$('#filter-btn').click(function(){
+  $('#filter').toggleClass('visible');
+  $('#filter-btn span').toggleClass('visible');
+  $('#opc1').toggleClass('visible');
+  $('#sidebar').removeClass('visible');
+  $('#sidebar-btn span').removeClass('visible');
+  $('#opc').removeClass('visible');
+});
+
+$('#opc1').click(function(){
+  $('#filter').removeClass('visible');
+  $('#filter-btn span').removeClass('visible');
+  $('#opc1').removeClass('visible');
+});
+
 $(window).unload(function(){
     updateCartTabButton();
   });
@@ -497,4 +512,5 @@ $("#51Filter").jqxCheckBox({
   theme: 'arctic'
 });
 
-$("#jqxButton").jqxButton({ width: '100', height: '25', theme: 'arctic'});
+$("#apply").jqxButton({ width: '100', height: '25', theme: 'arctic'});
+$("#viewAll").jqxButton({ width: '100', height: '25', theme: 'arctic'});
