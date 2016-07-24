@@ -472,7 +472,7 @@ $('#opc1').click(function(){
   $('#opc1').removeClass('visible');
 });
 
-$(window).unload(function(){
+$(window).onbeforeunload(function(){
     updateCartTabButton();
   });
 
