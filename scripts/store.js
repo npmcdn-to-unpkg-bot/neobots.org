@@ -477,10 +477,6 @@ $(window).unload(function(){
       updateCartTabButton();
     });
 
-$(window).pagehide(function(){
-    updateCartTabButton();
-  });
-
 
 $("#alumFilter").jqxCheckBox({
   width: '100px',
