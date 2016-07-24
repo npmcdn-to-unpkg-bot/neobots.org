@@ -520,8 +520,14 @@ $(window).unload(function(){
   var filters = ['#alumFilter','#vinFilter','#zipFilter','#20Filter','#50Filter','#51Filter'];
   var filterVar = ['alumFilter','vinFilter','zipFilter','Filter20','Filter50','Filter51'];
 
+  var alum = ['#235pan','#225pan','#335pan','#535pan','#2235pan','#125pan'];
+  var under30 = ['#225pan','#125pan'];
+
   function showProduct(p) {
     if(p == all) {
+
+    }
+    if(p == Filter20) {
       
     }
   }
@@ -536,7 +542,7 @@ $(window).unload(function(){
       filterVar[i] = $(filters[i]).jqxCheckBox({ checked: false });
     }
 
-    showProduct('#all');
+    showProduct(all);
 
   }
 
