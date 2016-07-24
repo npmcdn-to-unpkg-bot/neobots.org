@@ -527,9 +527,7 @@ $(window).unload(function(){
     if(p == all) {
 
     }
-    if(p == Filter20) {
-      
-    }
+    if(p == Filter20)
   }
 
   function refilter() {
