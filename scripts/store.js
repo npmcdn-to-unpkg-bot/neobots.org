@@ -522,14 +522,24 @@ $(window).unload(function(){
 
 
 
-  var alum = ['#235pan','#225pan','#335pan','#535pan','#2235pan','#125pan'];
+  var aluminum = ['#235pan','#225pan','#335pan','#535pan','#2235pan','#125pan'];
   var under30 = ['#225pan','#125pan'];
 
-  function showProduct(p) {
-    if(p == all) {
-
+  function filterProduct(prodFil) {
+    if(prodFil == -1) {
+      $('.productpanel').css('display','inline-block');
     }
-    if(p == Filter20)
+    if(prodFil == 3) {
+      $('.productpanel').css('display','none');
+      for(i = 0; i < under30.length; i++) {
+        $(under30[i]).css('display','inline-block');
+      }
+    }
+
+    $('#filter').removeClass('visible');
+    $('#filter-btn span').removeClass('visible');
+    $('#opc1').removeClass('visible');
+
   }
 
 
@@ -543,9 +553,8 @@ $(window).unload(function(){
       filterVar[i] = $(filters[i]).jqxCheckBox({ checked: false });
     }
 
+    filterProduct(-1);
 
-
-    showProduct(all);
 
 
   }
@@ -561,6 +570,7 @@ $(window).unload(function(){
     }
     else {
       console.log('filter');
+      filterProduct(filterVar.indexOf(true));
     }
 
   }
