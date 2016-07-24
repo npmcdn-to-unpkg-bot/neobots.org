@@ -496,7 +496,7 @@ $(window).unload(function(){
     theme: 'arctic'
   });
 
-  $("#20Filter").jqxCheckBox({
+  $("#30Filter").jqxCheckBox({
     width: '100px',
     height: 25,
     theme: 'arctic'
@@ -517,22 +517,50 @@ $(window).unload(function(){
   $("#apply").jqxButton({ width: '100', height: '25', theme: 'arctic'});
   $("#viewAll").jqxButton({ width: '100', height: '25', theme: 'arctic'});
 
-  var filters = ['#alumFilter','#vinFilter','#zipFilter','#20Filter','#50Filter','#51Filter'];
+  var filters = ['#alumFilter','#vinFilter','#zipFilter','#30Filter','#50Filter','#51Filter'];
   var filterVar = ['alumFilter','vinFilter','zipFilter','Filter20','Filter50','Filter51'];
 
 
 
   var aluminum = ['#235pan','#225pan','#335pan','#535pan','#2235pan','#125pan'];
   var under30 = ['#225pan','#125pan'];
+  var under50 = ['#235pan','#225pan','#335pan','#535pan','#2235pan','#125pan'];
 
   function filterProduct(prodFil) {
     if(prodFil == -1) {
       $('.productpanel').css('display','inline-block');
     }
-    if(prodFil == 3) {
+    else {
       $('.productpanel').css('display','none');
-      for(i = 0; i < under30.length; i++) {
-        $(under30[i]).css('display','inline-block');
+      if(prodFil == 0) {
+        for(i = 0; i < aluminum.length; i++) {
+          $(aluminum[i]).css('display','inline-block');
+        }
+      }
+      if(prodFil == 1) {
+        // for(i = 0; i < vinyl.length; i++) {
+        //   $(vinyl[i]).css('display','inline-block');
+        // }
+      }
+      if(prodFil == 2) {
+        // for(i = 0; i < zip.length; i++) {
+        //   $(zip[i]).css('display','inline-block');
+        // }
+      }
+      if(prodFil == 3) {
+        for(i = 0; i < under30.length; i++) {
+          $(under30[i]).css('display','inline-block');
+        }
+      }
+      if(prodFil == 4) {
+        for(i = 0; i < under50.length; i++) {
+          $(under50[i]).css('display','inline-block');
+        }
+      }
+      if(prodFil == 5) {
+        // for(i = 0; i < over50.length; i++) {
+        //   $(over50[i]).css('display','inline-block');
+        // }
       }
     }
 
