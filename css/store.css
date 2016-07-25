@@ -486,11 +486,6 @@ img.reaperLogo{margin-left:10px;max-width:80px;max-height:40px;}
 img.subzeroLogo{margin-left:10px;max-width:160px;max-height:40px;}
 }
 
-/*@media screen and (max-width:1350px){
-  .filter{
-    display: none;
-  }
-}*/
 
 .visibleInner {
   display: block;
