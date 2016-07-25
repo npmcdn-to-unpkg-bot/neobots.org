@@ -526,85 +526,85 @@ $(window).unload(function(){
   var under30 = ['#225pan','#125pan'];
   var under50 = ['#235pan','#225pan','#335pan','#535pan','#2235pan','#125pan'];
 
-  function filterProduct(prodFil) {
-    if(prodFil == -1) {
-      $('.productpanel').css('display','inline-block');
-    }
-    else {
-      $('.productpanel').css('display','none');
-      if(prodFil == 0) {
-        for(i = 0; i < aluminum.length; i++) {
-          $(aluminum[i]).css('display','inline-block');
-        }
-      }
-      if(prodFil == 1) {
-        // for(i = 0; i < vinyl.length; i++) {
-        //   $(vinyl[i]).css('display','inline-block');
-        // }
-      }
-      if(prodFil == 2) {
-        // for(i = 0; i < zip.length; i++) {
-        //   $(zip[i]).css('display','inline-block');
-        // }
-      }
-      if(prodFil == 3) {
-        for(i = 0; i < under30.length; i++) {
-          $(under30[i]).css('display','inline-block');
-        }
-      }
-      if(prodFil == 4) {
-        for(i = 0; i < under50.length; i++) {
-          $(under50[i]).css('display','inline-block');
-        }
-      }
-      if(prodFil == 5) {
-        // for(i = 0; i < over50.length; i++) {
-        //   $(over50[i]).css('display','inline-block');
-        // }
-      }
-    }
-
-    $('#filter').removeClass('visible');
-    $('#filter-btn span').removeClass('visible');
-    $('#opc1').removeClass('visible');
-
-  }
-
-
-  function refilter() {
-
-    for(i = 0; i < filters.length; i++) {
-      filterVar[i] = false;
-    }
-
-    for (i = 0; i < filters.length; i++) {
-      filterVar[i] = $(filters[i]).jqxCheckBox({ checked: false });
-    }
-
-    filterProduct(-1);
-
-
-
-  }
-
-  function filter() {
-
-    for (i = 0; i < filters.length; i++) {
-      filterVar[i] = $(filters[i]).jqxCheckBox('checked');
-    }
-
-    if(filterVar.indexOf(true)== -1) {
-      refilter();
-    }
-    else {
-      console.log('filter');
-      filterProduct(filterVar.indexOf(true));
-    }
-
-  }
-  $('#viewAll').click(function(){
-    refilter();
-  });
-  $('#apply').click(function(){
-    filter();
-  });
+  // function filterProduct(prodFil) {
+  //   if(prodFil == -1) {
+  //     $('.productpanel').css('display','inline-block');
+  //   }
+  //   else {
+  //     $('.productpanel').css('display','none');
+  //     if(prodFil == 0) {
+  //       for(i = 0; i < aluminum.length; i++) {
+  //         $(aluminum[i]).css('display','inline-block');
+  //       }
+  //     }
+  //     if(prodFil == 1) {
+  //       // for(i = 0; i < vinyl.length; i++) {
+  //       //   $(vinyl[i]).css('display','inline-block');
+  //       // }
+  //     }
+  //     if(prodFil == 2) {
+  //       // for(i = 0; i < zip.length; i++) {
+  //       //   $(zip[i]).css('display','inline-block');
+  //       // }
+  //     }
+  //     if(prodFil == 3) {
+  //       for(i = 0; i < under30.length; i++) {
+  //         $(under30[i]).css('display','inline-block');
+  //       }
+  //     }
+  //     if(prodFil == 4) {
+  //       for(i = 0; i < under50.length; i++) {
+  //         $(under50[i]).css('display','inline-block');
+  //       }
+  //     }
+  //     if(prodFil == 5) {
+  //       // for(i = 0; i < over50.length; i++) {
+  //       //   $(over50[i]).css('display','inline-block');
+  //       // }
+  //     }
+  //   }
+  //
+  //   $('#filter').removeClass('visible');
+  //   $('#filter-btn span').removeClass('visible');
+  //   $('#opc1').removeClass('visible');
+  //
+  // }
+  //
+  //
+  // function refilter() {
+  //
+  //   for(i = 0; i < filters.length; i++) {
+  //     filterVar[i] = false;
+  //   }
+  //
+  //   for (i = 0; i < filters.length; i++) {
+  //     filterVar[i] = $(filters[i]).jqxCheckBox({ checked: false });
+  //   }
+  //
+  //   filterProduct(-1);
+  //
+  //
+  //
+  // }
+  //
+  // function filter() {
+  //
+  //   for (i = 0; i < filters.length; i++) {
+  //     filterVar[i] = $(filters[i]).jqxCheckBox('checked');
+  //   }
+  //
+  //   if(filterVar.indexOf(true)== -1) {
+  //     refilter();
+  //   }
+  //   else {
+  //     console.log('filter');
+  //     filterProduct(filterVar.indexOf(true));
+  //   }
+  //
+  // }
+  // $('#viewAll').click(function(){
+  //   refilter();
+  // });
+  // $('#apply').click(function(){
+  //   filter();
+  // });
