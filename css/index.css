@@ -5,8 +5,10 @@
   margin: 0px;
   padding: 0px;
 }
-body {
+html,body {
   font-family: "proxima-nova",sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
   }
 h1,h2,h3,h4,h5,h6,p {
     transition: all 0.3s ease-in-out;
