@@ -21,11 +21,9 @@ hr {
   opacity: 0.5;
 }
 
-html,body {
+html {
   font-family: "proxima-nova",sans-serif;
-  color: #31373d;
-  max-width: 100%;
-  overflow-x: hidden; }
+  color: #31373d; }
 
 .buy-button {
     border: 2px solid #fff;
@@ -101,7 +99,7 @@ input {
   position: fixed;
   right: 0;
   top: 50%;
-  transform: translate(100%,-50%);
+  transform: translate(100%, -50%);
   opacity: 0;
   min-width: inherit;
   width: auto;
@@ -334,8 +332,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .textLeft {
   text-align: left;
-  font-weight: bolder;
-  font-size: 1.5em;
 }
 
 .product-title,
@@ -360,62 +356,12 @@ img.variant-image {
 .type--center {
   text-align: center; }
 
-  #filter{z-index:3;background:#fff;width:200px;height:100%;display:block;position:fixed;right:-210px;top:0px;transition:all 0.3s ease-in-out;box-shadow:1px 0px 10px #333;font-family:"proxima-nova",sans-serif;}
-  #filter.visible{right:0px;transition:all 0.3s ease-in-out;}
-  #filter ul{margin:0px;padding:0px;margin-top:25px;}
-  #filter ul li{list-style:none;text-align:left;width:100px;margin-left:auto;margin-right:auto;}
-
-
-  ul.filter {
-    list-style-type: none;
-    padding: 0;
-    width: 175px;
-    text-align: left;
-    border: 1px solid #aaa;
-    border-radius: 8px;
-    position: fixed;
-    overflow: auto;
-  	display:block;
-    padding: 20px;
-  	vertical-align:center;
-    margin-top: 30vh;
-    margin-left: 25px;
-  }
-
-  ul.filter li {
-      display: block;
-      color: #000;
-      text-decoration: none;
-      text-align: left;
-  	  vertical-align:center;
-  }
-
-  #filter-btn{display:inline-block;vertical-align:middle;width:20px;height:15px;cursor:pointer;margin:20px;position:absolute;top:0px;left:-60px;
-    -ms-transform: translate(0px, -1px) rotate(-90deg); /* IE 9 */
-    -webkit-transform: translate(0px, -1px) rotate(-90deg); /* Safari */
-    transform: translate(0px, -1px) rotate(-90deg);}
-  #filter-btn span{transition:all 0.3s ease-in-out;height:1px;background:#111;margin-bottom:5px;display:block;}
-  #filter-btn span:nth-child(2){width:50%;}
-  #filter-btn span:nth-child(3){width:75%;opacity: 1;}
-
-  #filter-btn span.visible{transition:all 0.3s ease-in-out;height:1px;background:#000;margin-bottom:5px;display:block;
-      -ms-transform: rotate(225deg); /* IE 9 */
-      -webkit-transform: rotate(225deg); /* Safari */
-      transform: rotate(225deg);}
-  #filter-btn span.visible:nth-child(2){width:100%;
-    -ms-transform: translate(0px, -6px) rotate(315deg); /* IE 9 */
-    -webkit-transform: translate(0px, -6px) rotate(315deg); /* Safari */
-    transform: translate(0px, -6px) rotate(315deg);
-  }
-  #filter-btn span.visible:nth-child(3){opacity: 0;}
-
-
 /*# sourceMappingURL=styles.css.map */
 
 header{margin-top:50px;}
-header h1{text-align:center;}
+header h1,h2,h3,h4,h5,h6{text-align:center;}
 header img.logo{max-width:500px;max-height:auto;display:block;margin-left:auto;margin-right:auto;transition:all 0.3s ease-in-out;}
-#products{background-color:#FFF;;margin:50px auto;text-align:center;padding:20px;}
+#products{background-color:rgba(200, 200, 200, 0.1);;margin:50px auto;text-align:center;padding:20px;}
 .products-inner{width:900px;margin:5px auto;display:none;}
 #footCenter{display:block;margin-left:auto;margin-right:auto;max-width:880px;text-align:center;padding-bottom:50px;}
 .foot{display:flex;}
@@ -485,7 +431,6 @@ img.crossLogo{margin-left:20px;max-width:120px;max-height:40px;}
 img.reaperLogo{margin-left:10px;max-width:80px;max-height:40px;}
 img.subzeroLogo{margin-left:10px;max-width:160px;max-height:40px;}
 }
-
 
 .visibleInner {
   display: block;

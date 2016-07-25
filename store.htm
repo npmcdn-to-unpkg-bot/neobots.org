@@ -8,15 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="css/store.css">
     <link rel="stylesheet" href="css/menu.css">
-    <link rel="stylesheet" href="http://jqwidgets.com/public/jqwidgets/styles/jqx.base.css">
-    <link rel="stylesheet" href="http://jqwidgets.com/public/jqwidgets/styles/jqx.arctic.css">
     <link rel="icon" type="image/png" href="ico/favicon.png">
   </head>
   <body>
     <div class="se-pre-con"></div>
-    <div id="opc1">
-      <img class="opc" src="images/opc_square.png" alt=""/>
-    </div>
     <div id="opc">
       <img class="opc" src="images/opc_square.png" alt=""/>
     </div>
@@ -40,30 +35,6 @@
         </div>
     </div>
 
-    <div id="filter">
-  		<ul>
-        <li><strong>Filter</strong></li>
-        <li><hr></li>
-  			<li><strong>Product</strong></li>
-  			<li><div id='alumFilter'>Aluminum</div></li>
-        <li><div id='vinFilter'>Vinyl Stickers</div></li>
-        <li><div id='zipFilter'>Zip-Ties</div></li>
-        <li><hr></li>
-        <li><strong>Price</strong></li>
-  			<li><div id='30Filter'>Under 30</div></li>
-        <li><div id='50Filter'>Under 50</div></li>
-        <li><div id='51Filter'>Over 50</div></li>
-        <li><hr></li>
-        <li><div style='width: 150px;margin:10px 0px auto;' id='jqxWidget'><div><input type="button" value="Apply" id='apply' /></div></div></li>
-        <li><div style='width: 150px;margin:10px 0px auto;' id='jqxWidget'><div><input type="button" value="View All" id='viewAll' /></div></div></li>
-      </ul>
-      <div id="filter-btn">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-  	</div>
-
     <div id="main">
       <header>
         <h1>THE NEOBOTS STORE</h1>
@@ -71,7 +42,7 @@
       <div id="products">
         <div class="products-inner">
           <div id="product-section">
-            <div class="textLeft">Products</div>
+            <h3 class="textLeft">Anodized Aluminum</h3>
             <hr>
             <div class="productpanel" id="235pan">
               <img src="images/store/2x35RE.jpg" class="variant-image">
@@ -103,7 +74,41 @@
               <h4 class="product-title">1x25 Anodized Aluminum Bar (10 Pack)</h4>
               <p class="variant-price">$29.99</p>
             </div>
-          </div>
+            </div>
+            <div id="product-section">
+              <h3 class="textLeft">Anodized Aluminum</h3>
+              <hr>
+              <div class="productpanel">
+                <img src="images/store/2x35RE.jpg" class="variant-image">
+                <h4 class="product-title">2x35 Anodized Aluminum C-Channel (4 Pack)</h4>
+                <p class="variant-price">$34.99</p>
+              </div>
+              <div class="productpanel">
+                <img src="images/store/2x25PK.jpg" class="variant-image">
+                <h4 class="product-title">2x25 Anodized Aluminum C-Channel (4 Pack)</h4>
+                <p class="variant-price">$29.99</p>
+              </div>
+              <div class="productpanel">
+                <img src="images/store/3x35BU.jpg" class="variant-image">
+                <h4 class="product-title">3x35 Anodized Aluminum C-Channel (4 Pack)</h4>
+                <p class="variant-price">$37.99</p>
+              </div>
+              <div class="productpanel">
+                <img src="images/store/5x35GL.jpg" class="variant-image">
+                <h4 class="product-title">5x35 Anodized Aluminum C-Channel (4 Pack)</h4>
+                <p class="variant-price">$44.99</p>
+              </div>
+              <div class="productpanel">
+                <img src="images/store/2235.jpg" class="variant-image">
+                <h4 class="product-title">2x2x35 Anodized Aluminum Angle (4 Pack)</h4>
+                <p class="variant-price">$34.99</p>
+              </div>
+              <div class="productpanel">
+                <img src="images/store/125.jpg" class="variant-image">
+                <h4 class="product-title">1x25 Anodized Aluminum Bar (10 Pack)</h4>
+                <p class="variant-price">$29.99</p>
+              </div>
+            </div>
         </div>
 
         <div class="product" id="buy-button-1">
@@ -201,9 +206,6 @@
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
     <script src="scripts/jquery-2.2.3.min.js"></script>
-    <script src="http://jqwidgets.com/public/jqwidgets/jqxcore.js"></script>
-    <script src="http://jqwidgets.com/public/jqwidgets/jqxcheckbox.js"></script>
-    <script src="http://jqwidgets.com/public/jqwidgets/jqxbuttons.js"></script>
     <script src="http://sdks.shopifycdn.com/js-buy-sdk/latest/shopify-buy.polyfilled.globals.min.js"></script>
     <script src="scripts/load.js"></script>
     <script src="scripts/menu.js"></script>

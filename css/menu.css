@@ -1,7 +1,5 @@
 #opc{display:none;}
 #opc.visible{display:block;}
-#opc1{display:none;}
-#opc1.visible{display:block;}
 img.opc{width:100%;height:100%;display:block;position:fixed;}
 #sidebar{z-index:2;background:#fff;width:200px;height:100%;display:block;position:fixed;left:-210px;top:0px;transition:all 0.3s ease-in-out;box-shadow:1px 0px 10px #333;font-family:"proxima-nova",sans-serif;}
 #sidebar.visible{left:0px;transition:all 0.3s ease-in-out;}
@@ -17,13 +15,13 @@ img.opc{width:100%;height:100%;display:block;position:fixed;}
 #sidebar-btn span:nth-child(3){width:50%;opacity: 1;}
 
 #sidebar-btn span.visible{transition:all 0.3s ease-in-out;height:1px;background:#000;margin-bottom:5px;display:block;
-    -ms-transform: translate(0px, 6px) rotate(-225deg); /* IE 9 */
-    -webkit-transform: translate(0px, 6px)rotate(-225deg); /* Safari */
-    transform: translate(0px, 6px) rotate(-225deg);}
+    -ms-transform: rotate(-225deg); /* IE 9 */
+    -webkit-transform: rotate(-225deg); /* Safari */
+    transform: rotate(-225deg);}
 #sidebar-btn span.visible:nth-child(2){width:100%;
-  -ms-transform: rotate(-315deg); /* IE 9 */
-  -webkit-transform: rotate(-315deg); /* Safari */
-  transform: rotate(-315deg);
+  -ms-transform: translate(0px, -6px) rotate(-315deg); /* IE 9 */
+  -webkit-transform: translate(0px, -6px) rotate(-315deg); /* Safari */
+  transform: translate(0px, -6px) rotate(-315deg);
 }
 #sidebar-btn span.visible:nth-child(3){opacity: 0;}
 
