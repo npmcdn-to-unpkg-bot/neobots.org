@@ -517,14 +517,14 @@ $(window).unload(function(){
   $("#apply").jqxButton({ width: '100', height: '25', theme: 'arctic'});
   $("#viewAll").jqxButton({ width: '100', height: '25', theme: 'arctic'});
 
-  var filters = ['#alumFilter','#vinFilter','#zipFilter','#30Filter','#50Filter','#51Filter'];
-  var filterVar = ['alumFilter','vinFilter','zipFilter','Filter20','Filter50','Filter51'];
-
-
-
-  var aluminum = ['#235pan','#225pan','#335pan','#535pan','#2235pan','#125pan'];
-  var under30 = ['#225pan','#125pan'];
-  var under50 = ['#235pan','#225pan','#335pan','#535pan','#2235pan','#125pan'];
+  // var filters = ['#alumFilter','#vinFilter','#zipFilter','#30Filter','#50Filter','#51Filter'];
+  // var filterVar = ['alumFilter','vinFilter','zipFilter','Filter20','Filter50','Filter51'];
+  //
+  //
+  //
+  // var aluminum = ['#235pan','#225pan','#335pan','#535pan','#2235pan','#125pan'];
+  // var under30 = ['#225pan','#125pan'];
+  // var under50 = ['#235pan','#225pan','#335pan','#535pan','#2235pan','#125pan'];
 
   // function filterProduct(prodFil) {
   //   if(prodFil == -1) {
