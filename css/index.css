@@ -78,32 +78,67 @@ header img.logo {
   margin: 30px auto;
 }
 
+
+
 .cellInner {
   width: 800px;
-  height: 75vh;
   font-size: 3em;
+  line-height: 70px;
   text-align: center;
-  margin: 0px auto;
-  display: block;
-  line-height: 75vh;
-  vertical-align: middle;
+  display: inline-block;
 }
 
 .anodizedCell {
   color: #fff;
-  height:75vh;
-  width:100vw;
+  height: 75vh;
+  width: 100vw;
   background: url('../images/anodizedBanner.jpg');
   background-size: cover;
   background-position: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+ -webkit-box-orient: vertical;
+ -webkit-box-direction: normal;
+ -webkit-flex-direction: column;
+ -ms-flex-direction: column;
+  flex-direction: column;
+ -webkit-box-pack: center;
+ -webkit-justify-content: center;
+ -ms-flex-pack: center;
+  justify-content: center;
+ -webkit-box-align: center;
+ -webkit-align-items: center;
+ -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
 }
 .platesCell {
   color: #fff;
-  height:75vh;
-  width:100vw;
+  height: 75vh;
+  width: 100vw;
   background: url('../images/platesBanner.JPG');
   background-size: cover;
   background-position: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+ -webkit-box-orient: vertical;
+ -webkit-box-direction: normal;
+ -webkit-flex-direction: column;
+ -ms-flex-direction: column;
+  flex-direction: column;
+ -webkit-box-pack: center;
+ -webkit-justify-content: center;
+ -ms-flex-pack: center;
+  justify-content: center;
+ -webkit-box-align: center;
+ -webkit-align-items: center;
+ -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
 }
 
 
@@ -207,13 +242,6 @@ img.subzeroLogo:hover {
 	max-width: 700px;
   }
 
-  .cellInner {
-    font-size: 2em;
-  }
-  .shopButton {
-    font-size: 20px;
-  }
-
   header img.logo {
     max-width: 400px;
   }
@@ -258,7 +286,7 @@ img.subzeroLogo:hover {
     width: 500px;
   }
   .shopButton {
-    display: none;
+    font-size: 20px;
   }
 
   #teams {
@@ -315,10 +343,10 @@ img.subzeroLogo:hover {
   }
   .cellInner {
     font-size: 1.3em;
-    width: 250px;
+    width: 300px;
   }
   .shopButton {
-    display: none;
+    font-size: 17px;
   }
   header img.logo {
     max-width: 275px;
