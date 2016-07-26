@@ -74,39 +74,25 @@ header img.logo {
   text-align: left;
 }
 
-#anodized {
-  height: 75vh;
-  background: url(../images/anodizedBanner.jpg);
+.main-carousel {
+  margin: 30px auto;
+}
+
+.anodizedCell {
+  height:75vh;
+  width:100vw;
+  background: url('../images/anodizedBanner.jpg');
   background-size: cover;
   background-position: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
- -webkit-box-orient: vertical;
- -webkit-box-direction: normal;
- -webkit-flex-direction: column;
- -ms-flex-direction: column;
-  flex-direction: column;
- -webkit-box-pack: center;
- -webkit-justify-content: center;
- -ms-flex-pack: center;
-  justify-content: center;
- -webkit-box-align: center;
- -webkit-align-items: center;
- -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-  margin-top: 25px;
 }
-#anodized-content {
-  width:800px;
-  text-align: right;
-  color:rgba(255, 255, 255, 0.99);
+.platesCell {
+  height:75vh;
+  width:100vw;
+  background: url('../images/platesBanner.jpg');
+  background-size: cover;
+  background-position: center;
 }
-#anodized-content h1 {
-  font-size: 100px;;
-}
+
 
 .shopAnodizedButton {
     border: 2px solid #fff;

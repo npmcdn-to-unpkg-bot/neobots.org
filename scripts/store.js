@@ -16,8 +16,8 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 
 var curProduct = getUrlParameter('product');
-var prodSKU = ['225','235','335','535','2235','125'];
-var prodId = ['7412397315','7205509123','7204116931','7194954563','7368739331','7369694531'];
+var prodSKU = ['235','335','535','2235','125'];
+var prodId = ['7205509123','7204116931','7194954563','7368739331','7369694531'];
 
 function getCurProdId(variant) {
   var sku = prodSKU.indexOf(variant);
@@ -158,10 +158,6 @@ var curProductId = getCurProdId(curProduct);
 
     $('#235pan').on('click', function () {
       window.open('store?product=235', '_self');
-    });
-
-    $('#225pan').on('click', function () {
-      window.open('store?product=225', '_self');
     });
 
     $('#335pan').on('click', function () {
@@ -520,11 +516,9 @@ $(window).unload(function(){
   var filters = ['#alumFilter','#vinFilter','#zipFilter','#30Filter','#50Filter','#51Filter'];
   var filterVar = ['alumFilter','vinFilter','zipFilter','Filter20','Filter50','Filter51'];
 
-
-
   var aluminum = ['#235pan','#225pan','#335pan','#535pan','#2235pan','#125pan'];
-  var under30 = ['#225pan','#125pan'];
-  var under50 = ['#235pan','#225pan','#335pan','#535pan','#2235pan','#125pan'];
+  var under30 = ['#125pan'];
+  var under50 = ['#235pan','#335pan','#535pan','#2235pan','#125pan'];
 
   function filterProduct(prodFil) {
     if(prodFil == -1) {
