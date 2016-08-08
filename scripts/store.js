@@ -129,7 +129,8 @@ var curProductId = getCurProdId(curProduct);
 
     /* checkout button click listener */
     $('.btn--cart-checkout').on('click', function () {
-      window.open(cart.checkoutUrl, '_self');
+      var checkoutWindow = window.open(cart.checkoutUrl, '_self');
+      window.addEventListener("message", checkoutPostMessageListener, checkoutWindow);
     });
 
     /* buy button click listener */
@@ -176,6 +177,21 @@ var curProductId = getCurProdId(curProduct);
       window.open('store?product=125', '_self');
     });
 
+  }
+
+  function checkoutPostMessageListener(event) {
+    var origin = event.origin || event.originalEvent.origin;
+    if (origin !== 'https://checkout.shopify.com') {
+      return;
+    }
+
+    var data = JSON.parse(event.data);
+
+    if (data.current_checkout_page === '/checkout/thank_you') {
+      cart.clearLineItems();
+      updateTotalCartPricing();
+      updateCartTabButton();
+    }
   }
 
 
