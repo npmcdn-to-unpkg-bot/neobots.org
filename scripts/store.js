@@ -218,7 +218,7 @@ var curProductId = getCurProdId(curProduct);
   /* Update product title
   ============================================================ */
   function updateProductTitle(title) {
-    $('#buy-button-1 .product-title').text(title);
+    $('#mainProduct .product-title').text(title);
   }
 
   /* Update product image based on selected variant
@@ -226,19 +226,19 @@ var curProductId = getCurProdId(curProduct);
   function updateVariantImage(image) {
     var src = (image) ? image.src : ShopifyBuy.NO_IMAGE_URI;
 
-    $('#buy-button-1 .variant-image').attr('src', src);
+    $('#mainProduct .variant-image').attr('src', src);
   }
 
   /* Update product variant title based on selected variant
   ============================================================ */
   function updateVariantTitle(variant) {
-    $('#buy-button-1 .variant-title').text(variant.title);
+    $('#mainProduct .variant-title').text(variant.title);
   }
 
   /* Update product variant price based on selected variant
   ============================================================ */
   function updateVariantPrice(variant) {
-    $('#buy-button-1 .variant-price').text('$' + variant.price);
+    $('#mainProduct .variant-price').text('$' + variant.price);
   }
 
   /* Attach and control listeners onto buy button

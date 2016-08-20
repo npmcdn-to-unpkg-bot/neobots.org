@@ -148,7 +148,7 @@ header img.logo {
     color: white;
     border-radius: 8px;
     padding: 15px 32px;
-    margin-left: 30px;
+    margin: 0px auto;
     text-align: center;
     text-decoration: none;
     font-size: 30px;
