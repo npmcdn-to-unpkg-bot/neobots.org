@@ -607,7 +607,7 @@ $(window).unload(function(){
       refilter();
     }
     else {
-      console.log('filter');
+      console.log(filterVar.indexOf(true));
       filterProduct(filterVar.indexOf(true));
     }
 
