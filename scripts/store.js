@@ -499,13 +499,15 @@ $(window).unload(function(){
   $("#vinFilter").jqxCheckBox({
     width: '150px',
     height: 25,
-    theme: 'arctic'
+    theme: 'arctic',
+    disabled: 'true'
   });
 
   $("#zipFilter").jqxCheckBox({
     width: '100px',
     height: 25,
-    theme: 'arctic'
+    theme: 'arctic',
+    disabled: 'true'
   });
 
   $("#30Filter").jqxCheckBox({
@@ -523,56 +525,82 @@ $(window).unload(function(){
   $("#51Filter").jqxCheckBox({
     width: '100px',
     height: 25,
-    theme: 'arctic'
+    theme: 'arctic',
+    disabled: 'true'
   });
 
   $("#apply").jqxButton({ width: '100', height: '25', theme: 'arctic'});
   $("#viewAll").jqxButton({ width: '100', height: '25', theme: 'arctic'});
 
-  var filters = ['#alumFilter','#vinFilter','#zipFilter','#30Filter','#50Filter','#51Filter'];
-  var filterVar = ['alumFilter','vinFilter','zipFilter','Filter20','Filter50','Filter51'];
+  var filtersType = ['#alumFilter','#vinFilter','#zipFilter'];
+  var filtersPrice = ['#30Filter','#50Filter','#51Filter'];
+  var filterVarType = ['alumFilter','vinFilter','zipFilter'];
+  var filterVarPrice = ['Filter20','Filter50','Filter51'];
 
   var aluminum = ['#235pan','#225pan','#335pan','#535pan','#2235pan','#125pan'];
   var under30 = ['#125pan'];
   var under50 = ['#235pan','#335pan','#535pan','#2235pan','#125pan'];
 
-  function filterProduct(prodFil) {
-    if(prodFil == -1) {
-      $('.productpanel').css('display','inline-block');
-    }
-    else {
-      $('.productpanel').css('display','none');
-      if(prodFil == 0) {
-        for(i = 0; i < aluminum.length; i++) {
-          $(aluminum[i]).css('display','inline-block');
+  // function filterProduct(prodFil) {
+  //   if(prodFil == -1) {
+  //     $('.productpanel').css('display','inline-block');
+  //   }
+  //   else {
+  //     $('.productpanel').css('display','none');
+  //     if(prodFil == 0) {
+  //       // for(i = 0; i < aluminum.length; i++) {
+  //       //   $(aluminum[i]).css('display','inline-block');
+  //       // }
+  //     }
+  //     if(prodFil == 1) {
+  //       // for(i = 0; i < vinyl.length; i++) {
+  //       //   $(vinyl[i]).css('display','inline-block');
+  //       // }
+  //     }
+  //     if(prodFil == 2) {
+  //       // for(i = 0; i < zip.length; i++) {
+  //       //   $(zip[i]).css('display','inline-block');
+  //       // }
+  //     }
+  //     if(prodFil == 3) {
+  //       for(i = 0; i < under30.length; i++) {
+  //         $(under30[i]).css('display','inline-block');
+  //       }
+  //     }
+  //     if(prodFil == 4) {
+  //       for(i = 0; i < under50.length; i++) {
+  //         $(under50[i]).css('display','inline-block');
+  //       }
+  //     }
+  //     if(prodFil == 5) {
+  //       // for(i = 0; i < over50.length; i++) {
+  //       //   $(over50[i]).css('display','inline-block');
+  //       // }
+  //     }
+  //   }
+
+    function filterProductPrice(prodFil) {
+      if(prodFil == -1) {
+        $('.productpanel').css('display','inline-block');
+      }
+      else {
+        $('.productpanel').css('display','none');
+        if(prodFil == 0) {
+          for(i = 0; i < under30.length; i++) {
+            $(under30[i]).css('display','inline-block');
+          }
+        }
+        if(prodFil == 1) {
+          for(i = 0; i < under50.length; i++) {
+            $(under50[i]).css('display','inline-block');
+          }
+        }
+        if(prodFil == 2) {
+          // for(i = 0; i < over50.length; i++) {
+          //   $(over50[i]).css('display','inline-block');
+          // }
         }
       }
-      if(prodFil == 1) {
-        // for(i = 0; i < vinyl.length; i++) {
-        //   $(vinyl[i]).css('display','inline-block');
-        // }
-      }
-      if(prodFil == 2) {
-        // for(i = 0; i < zip.length; i++) {
-        //   $(zip[i]).css('display','inline-block');
-        // }
-      }
-      if(prodFil == 3) {
-        for(i = 0; i < under30.length; i++) {
-          $(under30[i]).css('display','inline-block');
-        }
-      }
-      if(prodFil == 4) {
-        for(i = 0; i < under50.length; i++) {
-          $(under50[i]).css('display','inline-block');
-        }
-      }
-      if(prodFil == 5) {
-        // for(i = 0; i < over50.length; i++) {
-        //   $(over50[i]).css('display','inline-block');
-        // }
-      }
-    }
 
     $('#filter').removeClass('visible');
     $('#filter-btn span').removeClass('visible');
@@ -583,15 +611,21 @@ $(window).unload(function(){
 
   function refilter() {
 
-    for(i = 0; i < filters.length; i++) {
-      filterVar[i] = false;
+    for(i = 0; i < filtersType.length; i++) {
+      filterVarType[i] = false;
+    }
+    for(i = 0; i < filtersPrice.length; i++) {
+      filterVarType[i] = false;
     }
 
-    for (i = 0; i < filters.length; i++) {
-      filterVar[i] = $(filters[i]).jqxCheckBox({ checked: false });
+    for (i = 0; i < filtersType.length; i++) {
+      filterVarType[i] = $(filtersType[i]).jqxCheckBox({ checked: false });
+    }
+    for (i = 0; i < filtersPrice.length; i++) {
+      filterVarPrice[i] = $(filtersPrice[i]).jqxCheckBox({ checked: false });
     }
 
-    filterProduct(-1);
+    filterProductPrice(-1);
 
 
 
@@ -599,16 +633,21 @@ $(window).unload(function(){
 
   function filter() {
 
-    for (i = 0; i < filters.length; i++) {
-      filterVar[i] = $(filters[i]).jqxCheckBox('checked');
+    for (i = 0; i < filtersType.length; i++) {
+      filterVarType[i] = $(filtersType[i]).jqxCheckBox('checked');
     }
 
-    if(filterVar.indexOf(true)== -1) {
+    for (i = 0; i < filtersPrice.length; i++) {
+      filterVarPrice[i] = $(filtersPrice[i]).jqxCheckBox('checked');
+    }
+
+    if(filterVarPrice.indexOf(true)== -1 && filterVarType.indexOf(true)== -1) {
       refilter();
+      console.log("refilter");
     }
     else {
-      console.log(filterVar.indexOf(true));
-      filterProduct(filterVar.indexOf(true));
+      console.log(filterVarPrice.indexOf(true));
+      filterProductPrice(filterVarPrice.indexOf(true));
     }
 
   }
